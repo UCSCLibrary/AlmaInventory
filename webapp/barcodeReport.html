@@ -21,6 +21,7 @@ Author: Terry Brady, Georgetown University Libraries
 <script type="text/javascript" src="barcode.init.js"></script>
 <script type="text/javascript" src="barcode.js"></script>
 <script type="text/javascript" src="locCallClass.js"></script>
+<script type="text/javascript" src="locationDropdown.js"></script>
 </head>
 <body>
 <input id="test" type="hidden"/>
@@ -48,6 +49,16 @@ Author: Terry Brady, Georgetown University Libraries
   <p class="validateTips" id="message">Scan the next barcode.</p>
   <form>
     <fieldset>
+
+      <!-- Code borrowed from Kansas State Libraries, https://github.com/kstatelibraries Thank you rdeiser! -->
+      <select id="libraryCode" name="libraryCode">
+        <option value="" selected="selected">Select Library</option>
+      </select>
+      <select id="locationCode" name="locationCode">
+        <option value="" selected="selected">Select Location</option>
+      </select>
+      <br /><br />
+
       <label for="name">Barcode</label>
       <input type="text" name="barcode" id="barcode" value="" class="text ui-widget-content ui-corner-all">
       <button id="doBulk" title="Bulk Add Barcodes by Copy/Paste" type="button">...</button>
