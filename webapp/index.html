@@ -49,12 +49,7 @@ Author: Terry Brady, Georgetown University Libraries
   <p class="validateTips" id="message">Scan the next barcode.</p>
   <form>
     <fieldset>
-      <label for="name">Barcode</label>
-      <input type="text" name="barcode" id="barcode" value="" class="text ui-widget-content ui-corner-all">
-      <button id="doBulk" title="Bulk Add Barcodes by Copy/Paste" type="button">...</button>
-
-      <!-- START -- Enable user dropdown location validation -- added by K-State Libraires 06/2023 -->
-      <br><br>
+      <!-- Code borrowed from Kansas State Libraries, https://github.com/kstatelibraries Thank you rdeiser! -->
       <select id="libraryCode" name="libraryCode">
         <option value="" selected="selected">Select Library</option>
       </select>
@@ -62,7 +57,11 @@ Author: Terry Brady, Georgetown University Libraries
       <select id="locationCode" name="locationCode">
         <option value="" selected="selected">Select Location</option>
       </select>
-      <!-- END -- Enable user dropdown location validation -- added by K-State Libraires 06/2023 -->
+      <br /><br />
+
+      <label for="name">Barcode</label>
+      <input type="text" name="barcode" id="barcode" value="" class="text ui-widget-content ui-corner-all">
+      <button id="doBulk" title="Bulk Add Barcodes by Copy/Paste" type="button">...</button>
 
       <!-- Allow form submission with keyboard without duplicating the dialog button -->
       <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
