@@ -606,7 +606,13 @@ function parseResponse(barcode, json) {
       status_msg = "Empty call number. ";
     }
 
-    if (!LOC_REGEX.test(loc)) {
+    // Code borrowed from Kansas State Libraries
+    // https://github.com/kstatelibraries
+    // Thank you rdeiser!
+    var selectLocation = document.getElementById("locationCode");
+    var locCode = selectLocation.value;
+
+    if (locCode !== loc) {
       status = (status == "PASS") ? "PULL-LOC" : "PULL-MULT";
       status_msg += LOC_MSG;
     }
